@@ -9,7 +9,7 @@ export function Members() {
   const [members, setMembers] = useState<Member[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000").then(async (response) => {
+    fetch("http://localhost:3000/members").then(async (response) => {
       const members = await response.json();
       setMembers(members);
     });
@@ -23,8 +23,9 @@ export function Members() {
         <ul aria-label="Members list" data-testid="members-list">
           {members.map((member: Member, index: number) => (
             <li key={index}>
-              <span>{member.firstName}</span>
-              <span>{member.lastName}</span>
+              <p>
+                {member.firstName} {member.lastName}
+              </p>
             </li>
           ))}
         </ul>

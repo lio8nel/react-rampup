@@ -1,7 +1,12 @@
+import { Members } from "./admin/members/Members";
 import "./App.css";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <Members />
+    </>
+  );
 }
 
 export default App;
